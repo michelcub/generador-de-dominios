@@ -4,8 +4,8 @@ const noun = ["jogger", "racoon"];
 
 const btnGenerate = document.querySelector("#btn");
 const listDomain = document.querySelector("#list");
-const option = document.querySelector("#select").value;
-const reset = document.querySelector('#btnReset');
+let select = document.querySelector("#select").value;
+const reset = document.querySelector("#btnReset");
 
 const generationDomain = (pronoun, adj, noun, option) => {
   const pronounDomain = pronoun[Math.floor(Math.random() * 2 + 0)];
@@ -15,9 +15,9 @@ const generationDomain = (pronoun, adj, noun, option) => {
 };
 
 btnGenerate.addEventListener("click", () => {
-  listDomain.innerHTML += generationDomain(pronoun, adj, noun, option);
+  listDomain.innerHTML += generationDomain(pronoun, adj, noun, select);
 });
 
-reset.addEventListener('click', ()=>{
-    location.reload();
-})
+reset.addEventListener("click", () => {
+  location.reload();
+});
